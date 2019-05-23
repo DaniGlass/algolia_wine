@@ -38,29 +38,17 @@
     </div>
   <section><%= image_tag ("hero_small.jpg")%></section>
 
-    <div class="advanced_search">
-      <div class="wrapper">
-        <span class="arrow"></span>
-        <form action="#" method="post">
-          <div class="search_fields">
-            <input type="text" class="float" id="check_in_date" name="check_in_date" placeholder="Check In Date"  autocomplete="off">
-
-            <hr class="field_sep float"/>
-
-            <input type="text" class="float" id="check_out_date" name="check_out_date" placeholder="Check Out Date"  autocomplete="off">
-          </div>
-          <div class="search_fields">
-            <input type="text" class="float" id="min_price" name="min_price" placeholder="Min. Price"  autocomplete="off">
-
-            <hr class="field_sep float"/>
-
-            <input type="text" class="float" id="max_price" name="max_price" placeholder="Max. price"  autocomplete="off">
-          </div>
-          <input type="text" id="keywords" name="keywords" placeholder="Keywords"  autocomplete="off">
-          <input type="submit" id="submit_search" name="submit_search"/>
-        </form>
-      </div>
-    </div><!--  end advanced search section  -->
+<script type="text/javascript">
+var client = algoliasearch('DEBD39694U', '6db35c5c8b76f93c534b37222f3c7f96');
+var index = client.initIndex('dev_WINE');
+index.search('something', { hitsPerPage: 10, page: 0 })
+  .then(function searchDone(content) {
+    console.log(content)
+  })
+  .catch(function searchFailure(err) {
+    console.error(err);
+  });
+</script>
   </section><!--  end search section  -->
 
 
