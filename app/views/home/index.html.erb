@@ -29,20 +29,18 @@
 
   <section class="search">
     <div class="wrapper">
-      <form id="search_bar">
-        <input type="text" id="search" name="search" placeholder="What are you looking for?"/>
-      </form>
+        <input type="text" id="search" placeholder="What are you looking for?">
     </div>
-
 
   <section><%= image_tag ("hero_small.jpg")%></section>
 
     <script type="text/javascript">
-      document.getElementById("search").addEventListener("keypress", run_algoseatch);
+      document.getElementById('search').addEventListener("keyup", run_algoseatch);
       var client = algoliasearch('DEBD39694U', '6db35c5c8b76f93c534b37222f3c7f96');
       var index = client.initIndex('dev_WINE');
       function run_algoseatch(){
-        index.search('2014', { hitsPerPage: 10, page: 0 })
+        console.log(document.getElementById('search').value);
+        index.search(document.getElementById('search').value, {hitsPerPage: 10, page: 0})
         .then(function searchDone(content) {
         console.log(content)
         })
