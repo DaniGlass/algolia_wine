@@ -18,10 +18,10 @@
       <div class="wrapper">
         <nav>
           <ul>
-            <li><a href="#">Red</a></li>
-            <li><a href="#">White</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>Red</li>
+            <li>White</li>
+            <li>About</li>
+            <li>Contact</li>
           </ul>
         </nav>
       </div>
@@ -29,29 +29,28 @@
 
   <section class="search">
     <div class="wrapper">
-
-      <a href="#" class="advanced_search_icon" id="advanced_search_btn"></a>
+      <form id="search_bar">
+        <input type="text" id="search" name="search" placeholder="What are you looking for?"/>
+      </form>
     </div>
+
+
   <section><%= image_tag ("hero_small.jpg")%></section>
 
-<script type="text/javascript">
-var client = algoliasearch('DEBD39694U', '6db35c5c8b76f93c534b37222f3c7f96');
-var index = client.initIndex('dev_WINE');
-console.log('working')
-index.search('2014', { hitsPerPage: 10, page: 0 })
-  .then(function searchDone(content) {
-    console.log(content)
-    console.log('content')
-  })
-  .catch(function searchFailure(err) {
-    console.error(err);
-    console.log('error')
-  });
-</script>
-
-<script type="text/javascript"> console.log("hi")</script>
+    <script type="text/javascript">
+      document.getElementById("search").addEventListener("keypress", run_algoseatch);
+      var client = algoliasearch('DEBD39694U', '6db35c5c8b76f93c534b37222f3c7f96');
+      var index = client.initIndex('dev_WINE');
+      function run_algoseatch(){
+        index.search('2014', { hitsPerPage: 10, page: 0 })
+        .then(function searchDone(content) {
+        console.log(content)
+        })
+        .catch(function searchFailure(err) {
+        console.error(err);
+        });
+      };
+    </script>
   </section><!--  end search section  -->
-
-
 </body>
 </html>
