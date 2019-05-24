@@ -15,40 +15,178 @@
 </head>
 <body>
     <header>
+      <section class="search">
       <div class="wrapper">
-        <nav>
-          <ul>
-            <li>Red</li>
-            <li>White</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      </div>
-    </header><!--  end header section  -->
-
-  <section class="search">
-    <div class="wrapper">
-        <input type="text" id="search" placeholder="What are you looking for?">
+      <input type="text" id="search" placeholder="What are you looking for?">
     </div>
+    </header><!--  end header section  -->
 
   <section><%= image_tag ("hero_small.jpg")%></section>
 
     <script type="text/javascript">
       document.getElementById('search').addEventListener("keyup", run_algoseatch);
+
       var client = algoliasearch('DEBD39694U', '6db35c5c8b76f93c534b37222f3c7f96');
       var index = client.initIndex('dev_WINE');
+
       function run_algoseatch(){
-        console.log(document.getElementById('search').value);
         index.search(document.getElementById('search').value, {hitsPerPage: 10, page: 0})
         .then(function searchDone(content) {
-        console.log(content)
+          var returned = content
+
+          //item0
+          document.getElementById(`year0`).innerHTML = returned.hits[0].year
+          document.getElementById(`name0`).innerHTML = returned.hits[0].name
+          document.getElementById(`quality0`).innerHTML = returned.hits[0].quality
+          document.getElementById(`domain0`).innerHTML = returned.hits[0].domain
+          document.getElementById(`type0`).innerHTML = returned.hits[0].type
+
+          //item1
+          document.getElementById(`year1`).innerHTML = returned.hits[1].year
+          document.getElementById(`name1`).innerHTML = returned.hits[1].name
+          document.getElementById(`quality1`).innerHTML = returned.hits[1].quality
+          document.getElementById(`domain1`).innerHTML = returned.hits[1].domain
+          document.getElementById(`type1`).innerHTML = returned.hits[1].type
+
+          //item2
+          document.getElementById(`year2`).innerHTML = returned.hits[2].year
+          document.getElementById(`name2`).innerHTML = returned.hits[2].name
+          document.getElementById(`quality2`).innerHTML = returned.hits[2].quality
+          document.getElementById(`domain2`).innerHTML = returned.hits[2].domain
+          document.getElementById(`type2`).innerHTML = returned.hits[2].type
+
+          //item3
+          document.getElementById(`year3`).innerHTML = returned.hits[3].year
+          document.getElementById(`name3`).innerHTML = returned.hits[3].name
+          document.getElementById(`quality3`).innerHTML = returned.hits[3].quality
+          document.getElementById(`domain3`).innerHTML = returned.hits[3].domain
+          document.getElementById(`type3`).innerHTML = returned.hits[3].type
+
+          //item4
+          document.getElementById(`year4`).innerHTML = returned.hits[4].year
+          document.getElementById(`name4`).innerHTML = returned.hits[4].name
+          document.getElementById(`quality4`).innerHTML = returned.hits[4].quality
+          document.getElementById(`domain4`).innerHTML = returned.hits[4].domain
+          document.getElementById(`type4`).innerHTML = returned.hits[4].type
+
+          //item5
+          document.getElementById(`year5`).innerHTML = returned.hits[5].year
+          document.getElementById(`name5`).innerHTML = returned.hits[5].name
+          document.getElementById(`quality5`).innerHTML = returned.hits[5].quality
+          document.getElementById(`domain5`).innerHTML = returned.hits[5].domain
+          document.getElementById(`type5`).innerHTML = returned.hits[5].type
+
+          //item6
+          document.getElementById(`year6`).innerHTML = returned.hits[6].year
+          document.getElementById(`name6`).innerHTML = returned.hits[6].name
+          document.getElementById(`quality6`).innerHTML = returned.hits[6].quality
+          document.getElementById(`domain6`).innerHTML = returned.hits[6].domain
+          document.getElementById(`type6`).innerHTML = returned.hits[6].type
+
+          //item7
+          document.getElementById(`year7`).innerHTML = returned.hits[7].year
+          document.getElementById(`name7`).innerHTML = returned.hits[7].name
+          document.getElementById(`quality7`).innerHTML = returned.hits[7].quality
+          document.getElementById(`domain7`).innerHTML = returned.hits[7].domain
+          document.getElementById(`type7`).innerHTML = returned.hits[7].type
+
+          //item8
+          document.getElementById(`year8`).innerHTML = returned.hits[8].year
+          document.getElementById(`name8`).innerHTML = returned.hits[8].name
+          document.getElementById(`quality8`).innerHTML = returned.hits[8].quality
+          document.getElementById(`domain8`).innerHTML = returned.hits[8].domain
+          document.getElementById(`type8`).innerHTML = returned.hits[8].type
+
+          //item9
+          document.getElementById(`year9`).innerHTML = returned.hits[9].year
+          document.getElementById(`name9`).innerHTML = returned.hits[9].name
+          document.getElementById(`quality9`).innerHTML = returned.hits[9].quality
+          document.getElementById(`domain9`).innerHTML = returned.hits[9].domain
+          document.getElementById(`type9`).innerHTML = returned.hits[9].type
         })
+
         .catch(function searchFailure(err) {
         console.error(err);
         });
       };
+
     </script>
   </section><!--  end search section  -->
+
+  <section class="results_list">
+    <ol>
+      <li>
+        <p id="year0"></p>
+        <p id="name0"></p>
+        <p id="domain0"> </p>
+        <p id="type0"> </p>
+        <p id="quality0"> </p>
+      </li>
+      <li>
+        <p id="year1"></p>
+        <p id="name1"></p>
+        <p id="domain1"> </p>
+        <p id="type1"> </p>
+        <p id="quality1"> </p>
+      </li>
+      <li>
+        <p id="year2"></p>
+        <p id="name2"></p>
+        <p id="domain2"> </p>
+        <p id="type2"> </p>
+        <p id="quality2"> </p>
+      </li>
+      <li>
+        <p id="year3"></p>
+        <p id="name3"></p>
+        <p id="domain3"> </p>
+        <p id="type3"> </p>
+        <p id="quality3"> </p>
+      </li>
+      <li>
+        <p id="year4"></p>
+        <p id="name4"></p>
+        <p id="domain4"> </p>
+        <p id="type4"> </p>
+        <p id="quality4"> </p>
+      </li>
+      <li>
+        <p id="year5"></p>
+        <p id="name5"></p>
+        <p id="domain5"> </p>
+        <p id="type5"> </p>
+        <p id="quality5"> </p>
+      </li>
+      <li>
+        <p id="year6"></p>
+        <p id="name6"></p>
+        <p id="domain6"> </p>
+        <p id="type6"> </p>
+        <p id="quality6"> </p>
+      </li>
+      <li>
+        <p id="year7"></p>
+        <p id="name7"></p>
+        <p id="domain7"> </p>
+        <p id="type7"> </p>
+        <p id="quality7"> </p>
+      </li>
+      <li>
+        <p id="year8"></p>
+        <p id="name8"></p>
+        <p id="domain8"> </p>
+        <p id="type8"> </p>
+        <p id="quality8"> </p>
+      </li>
+      <li>
+        <p id="year9"></p>
+        <p id="name9"></p>
+        <p id="domain9"> </p>
+        <p id="type9"> </p>
+        <p id="quality9"> </p>
+      </li>
+    </ol>
+
+  </section>
 </body>
 </html>
