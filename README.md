@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things you may want to know:
 
-Things you may want to cover:
+* Requires Ruby on Rails version: Rails 5.2.3, use rails -v to find out your version
 
-* Ruby version
+* Git clone repository to begin
 
-* System dependencies
+* start by initalizing the database and models run: rails db:migrate
 
-* Configuration
+* to start the server run: rails s 
 
-* Database creation
+* in your browser window visit: localhost:3000
 
-* Database initialization
+* enter a search and get results in seconds! 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* the ui is... not my bed work
