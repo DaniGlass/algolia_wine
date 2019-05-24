@@ -14,4 +14,4 @@ Things you may want to know:
 
 * enter a search and get results in seconds! 
 
-* the ui is... not my bed work
+* the ui is... not my best work
