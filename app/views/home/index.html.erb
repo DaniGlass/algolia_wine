@@ -21,12 +21,15 @@
     <header>
       <section class="search">
       <div class="wrapper">
-      <input type="text" id="search" placeholder="Welcome To Bordeuax! What are you looking for?">
-    </div>
+        <!-- <input class="radio" type="radio" name="type" value="red">Red?
+        <input class="radio" type="radio" name="type" value="white">White? -->
+        <input type="text" id="search" placeholder="Welcome To Bordeuax! What are you looking for?">
+      </div>
     </header><!--  end header section  -->
 
     <script type="text/javascript">
       document.getElementById('search').addEventListener("keyup", run_algoseatch);
+      // document.getElementByClass('radio').addEventListener("onPress", run_algoseatch);
 
       var client = algoliasearch('DEBD39694U', '6db35c5c8b76f93c534b37222f3c7f96');
       var index = client.initIndex('dev_WINE');
